@@ -10,6 +10,7 @@
 </ion-header>
 
 <ion-content>
+  <!-- <div id="hide">
     <ion-card class="welcome-card">
       <ion-img src="/assets/shapes.svg"></ion-img>
       <ion-card-header>
@@ -41,4 +42,35 @@
         <ion-label>Theme Your App</ion-label>
       </ion-item>
     </ion-list>
+  </div> -->
+  
+  <!-- <div id = "updateslist">
+    <ion-list>
+      <button ion-item *ngFor="let post of posts" (click)="openPost(post)">
+        <h2 [innerHTML]="post.title"></h2>
+        <p [innerHTML]="post.author.displayName"></p>
+      </button>
+    </ion-list>
+    <p class="readmore">Read more vv</p>
+  </div> -->
+
+  <div id = "updateslist">
+      <ion-list>
+        <ion-item>
+          <ion-button ion-item class="articleItem">
+            <h2 class= "articleHead">Site is now live!</h2>
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </ion-button>
+        </ion-item>
+        <ion-item>
+            <ion-button ion-item class="articleItem">
+              <h2 class= "articleHead">How to use the site</h2>
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </ion-button>
+          </ion-item>
+      </ion-list>
+    </div>
+
+  <script>
+  </script>
 </ion-content>
