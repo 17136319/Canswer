@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { MatIcon } from '@angular/material' ;
+import { LaunchNavigator } from '@ionic-native/launch-navigator/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +23,9 @@ import { MatIcon } from '@angular/material' ;
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    LaunchNavigator,
+    MatIcon
   ],
   bootstrap: [AppComponent]
 })

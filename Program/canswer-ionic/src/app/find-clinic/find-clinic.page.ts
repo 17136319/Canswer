@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LaunchNavigator } from '@ionic-native/launch-navigator/ngx';
 
 @Component({
   selector: 'app-find-clinic',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FindClinicPage implements OnInit {
 
-  constructor() { }
+  constructor(private launchNavigator: LaunchNavigator) { }
 
   ngOnInit() {
   }
 
+  navigate(){
+    this.launchNavigator.navigate("doctor");
+  }
 }

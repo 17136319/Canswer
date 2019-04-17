@@ -14,7 +14,8 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
-  },  { path: 'article', loadChildren: './article/article.module#ArticlePageModule' }
+  },  { path: 'article', loadChildren: './article/article.module#ArticlePageModule' },
+  { path: 'find-clinic', loadChildren: './find-clinic/find-clinic.module#FindClinicPageModule' }
 
 ];
 

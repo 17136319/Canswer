@@ -23,7 +23,12 @@ export class AppComponent {
     {
       title: 'Article',
       url: '/article',
-      icon: 'asterisk'
+      icon: 'paper'
+    },
+    {
+      title: 'Find a Clinic',
+      url: '/find-clinic',
+      icon: 'medkit'
     }
   ];
 
