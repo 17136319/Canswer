@@ -1,0 +1,30 @@
+#ArticleImage{
+    margin: auto;
+    display: flex; 
+    justify-content: center;
+}
+
+#ArticleContent{
+    text-align: justify;
+    padding: 5%;
+    font-size: 100%;
+}
+
+#back{
+    float: left;
+    display: flexbox;
+    font-size: 200%;
+    width: 8%;
+    color: var(--ion-color-primary);
+    margin-left: 2%;
+}
+
+#aTitile{
+    float: left;
+    display: flexbox;
+    width: 80%;
+}
+
+#titleContainer{
+    height: auto;
+}
