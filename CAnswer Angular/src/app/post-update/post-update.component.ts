@@ -3,7 +3,7 @@ import { Article } from '@app/_models/article';
 import { PostService } from '@app/_services/post.service';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-post-update',
@@ -14,42 +14,59 @@ export class PostUpdateComponent implements OnInit {
 
   article: Article;
   selectedFile: File;
-  newArticleForm: FormGroup;
+  errorMsg: String;
+  today: Date;
+  newArticleForm = new FormGroup({
+    title: new FormControl('',Validators.required),
+    description: new FormControl(''),
+    pic: new FormControl(''),
+  });
   loading = false;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder,
-              private route: ActivatedRoute,
-              private router: Router) { }
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private http: HttpClient) { }
 
   
   ngOnInit() {}
 
   onFileChanged(event) {
     this.selectedFile = <File>event.target.files[0];
+    console.log(event);
   }
 
   get f() { return this.newArticleForm.controls; }
 
   Submit() {
-    this.f.title.value;
-    console.log(this.f.title.value);
+    this.article = new Article();
+    this.today = new Date();
+    // console.log(this.f.title.value);
     this.submitted = true;
 
     // stop here if form is invalid
     if (this.newArticleForm.invalid) {
-        return;
+      this.errorMsg = "Title needed!";
+      return;
     }
 
     this.loading = true;
-    this.article.createDate = new Date();
-    this.article.pic = this.selectedFile;
+    if(this.f.description.value){
+      this.article.description = this.f.description.value;
+    }
+    this.article.title = this.f.title.value;
+    this.article.createDate = this.today;
+    if(this.selectedFile){
+      this.article.pic = this.selectedFile;
+    }
     console.log(this.article);
+    this.router.navigate(['/']);
   }
     public imagePath;
     imgURL: any;
     public message: string;
    
+
     preview(files) {
       if (files.length === 0)
         return;

@@ -3,18 +3,21 @@ import { Subscription } from 'rxjs';
 import { first } from 'rxjs/operators';
 
 import { User } from '@app/_models';
-import { UserService, AuthenticationService } from '@app/_services';
+import { UserService, AuthenticationService, PostService } from '@app/_services';
+import { Article } from '@app/_models/article';
 
 @Component({ templateUrl: 'home.component.html' })
 export class HomeComponent implements OnInit, OnDestroy {
     currentUser: User;
     currentUserSubscription: Subscription;
     users: User[] = [];
+    articles: Article[] =[];
     selectedFile: any;
 
     constructor(
         private authenticationService: AuthenticationService,
-        private userService: UserService
+        private userService: UserService,
+        private articleService: PostService
     ) {
         this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
             this.currentUser = user;
@@ -22,7 +25,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.loadAllUsers();
+        // this.loadAllUsers();
+        // this.loadAllArticles();
     }
 
     ngOnDestroy() {
@@ -41,32 +45,10 @@ export class HomeComponent implements OnInit, OnDestroy {
             this.users = users;
         });
     }
-    onFileChanged(event) {
-        this.selectedFile = event.target.files[0]
-      }
-    
-      onUpload() {
-        // upload code goes here
-      }
-        public imagePath;
-        imgURL: any;
-        public message: string;
-       
-        preview(files) {
-          if (files.length === 0)
-            return;
-       
-          var mimeType = files[0].type;
-          if (mimeType.match(/image\/*/) == null) {
-            this.message = "Only images are supported.";
-            return;
-          }
-       
-          var reader = new FileReader();
-          this.imagePath = files;
-          reader.readAsDataURL(files[0]); 
-          reader.onload = (_event) => { 
-            this.imgURL = reader.result; 
-          }
-        }
-      }
+
+    private loadAllArticles(){
+      this.articleService.getAll().pipe(first()).subscribe(articles =>{
+        this.articles = articles;
+      });
+    }
+  }

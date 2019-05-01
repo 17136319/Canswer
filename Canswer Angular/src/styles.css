@@ -480,5 +480,21 @@ padding:10px;
     font-weight: bold;
 }
   
-  
+  #btnSubArt{
+    width: 100%;
+    margin: 3%;
+  }
 
+  #newUpdateTitleInput{
+    width: 100%;
+  }
+
+  #newUpdateContentInput{
+    width: 100%;
+  }
+
+.is-danger{
+  background-color: #e21649;
+  text-align: center;
+  border-radius: 7px;
+}

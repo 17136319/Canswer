@@ -8,9 +8,10 @@ import { AccountComponent } from './account/account.component';
 import{ForumComponent} from './forum/forum.component';
 import {UpdatesComponent} from './updates/updates.component';
 import { AuthGuard } from './_guards';
+import { PostUpdateComponent } from './post-update/post-update.component';
 
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: '', component: HomeComponent},
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     {path : 'about', component : AboutComponent},
@@ -18,6 +19,7 @@ const appRoutes: Routes = [
     {path: 'forum',component : ForumComponent},
     {path:"account",component: AccountComponent},
     {path:"register" , component: RegisterComponent},
+    {path: "postUpdate", component: PostUpdateComponent},
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];

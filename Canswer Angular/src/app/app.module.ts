@@ -23,7 +23,7 @@ import { AboutComponent } from './about/about.component';
 import { AccountComponent } from './account/account.component';
 import{ForumComponent} from './forum/forum.component';
 import {UpdatesComponent} from './updates/updates.component';
-
+import { PostUpdateComponent } from './post-update/post-update.component';
 
 
 @NgModule({
@@ -46,7 +46,8 @@ import {UpdatesComponent} from './updates/updates.component';
         AccountComponent ,
         ForumComponent,
         UpdatesComponent,
-        AboutComponent
+        AboutComponent,
+        PostUpdateComponent
 
 ],
     providers: [

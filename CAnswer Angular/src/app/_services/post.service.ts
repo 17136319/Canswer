@@ -12,22 +12,22 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get<Article[]>(`${environment.apiUrl}/article`);
+    return this.http.get<Article[]>(`${environment.apiUrl}/users`);
 }
 
 getById(id: number) {
-    return this.http.get(`${environment.apiUrl}/article/${id}`);
+    return this.http.get(`${environment.apiUrl}/users/${id}`);
 }
 
 addPost(article: Article) {
-    return this.http.post(`${environment.apiUrl}/article/createPost`, article);
+    return this.http.post(`${environment.apiUrl}/users/AddPost`, article);
 }
 
 update(article: Article) {
-    return this.http.put(`${environment.apiUrl}/article/${article.id}`, article);
+    return this.http.put(`${environment.apiUrl}/users/${article.id}`, article);
 }
 
 delete(id: number) {
-    return this.http.delete(`${environment.apiUrl}/article/${id}`);
+    return this.http.delete(`${environment.apiUrl}/users/${id}`);
 }
 }
