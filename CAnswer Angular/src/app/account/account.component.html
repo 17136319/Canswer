@@ -1,0 +1,53 @@
+<div class="main__container">
+  <div class="acc-card">
+
+    <main class="acc-content">
+      <!-- acc form -->
+      <h1 class="acc-welcome-text">Account Information</h1>
+    
+      
+      <form (submit)="acc()" method="post" class="acc-form">
+         <div *ngIf="currentUser"> <label>Title </label><select aria-placeholder="" name="Title" class="acc-input">
+              <option value="volvo">Dr.</option>
+              <option value="saab">Mr.</option>
+              <option value="opel">Mrs.</option>
+              <option value="audi">Miss.</option>
+            </select>
+          </div>
+          <div>
+            <label>Name </label>
+              <input type="text" name="name" class="acc-input" value = "{{currentUser.name}}">
+          </div>
+          <div>
+              <label>Surname </label>
+                <input type="text"  name="surname" class="acc-input" value = "{{currentUser.surname}}">
+            </div>
+                <div>
+                    <label>Username </label>
+                      <input type="text"  name="username" class="acc-input" value="{{currentUser.username}}" >
+                  </div>
+                  <div>
+                  <label>Email </label>
+                  <input type="text"  name="username" class="acc-input" value = "{{currentUser.email}}">
+              </div>
+                      <div>
+                          <label>Phone Number </label>
+                            <input type="tel" name="Phone Number" class="acc-input" value = "{{currentUser.phoneNo}}">
+                        </div>
+                            <div>
+                                <label>Job Description </label>
+                                  <input type="text"  name="Job Description" class="acc-input" value = "{{currentUser.jobDescription}}">
+                              </div>
+                       <div>
+                                        <label>Highest Qualification </label>
+                                   <input type="text" name="Qualification" class="acc-input" value = "{{currentUser.Qualification}}">
+                       </div>
+        
+        <input type="submit" name="submit" placeholder="Log in" class="acc-btn">
+      </form>
+    </main>
+ 
+   
+
+  </div>
+
