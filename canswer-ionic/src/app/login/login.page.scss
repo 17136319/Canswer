@@ -1,0 +1,36 @@
+#loginForm{
+    // background-color: var(--ion-color-primary-tint);
+    align-content: center;
+    margin: auto;
+    width: 100%;
+    padding: 8%;
+    background-image: linear-gradient(var(--ion-color-primary),var(--ion-color-primary-tint),var(--ion-color-primary-contrast) );
+    // border-radius: 10px;
+    // text-align: center;
+}
+
+#loginPic{
+    border-radius: 10px;
+    width: 50%;
+}
+
+#Logincontent{
+    margin: auto;
+    width: 100%;
+    // background-color: var(--ion-color-primary-tint);
+    // width: 100%;
+    // height: 100%;
+}
+
+.loginInput{
+    margin: auto;
+    border-radius: 10px;
+    text-align-last: center;
+    width: 50%;
+}
+
+#loginSubmit{
+    margin: auto;
+    width: 50%;
+    background-color: var(--ion-color-primary-shade);
+}
