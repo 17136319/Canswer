@@ -20,7 +20,8 @@ const routes: Routes = [
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'forumn', loadChildren: './forumn/forumn.module#ForumnPageModule' },
   { path: 'info-center', loadChildren: './info-center/info-center.module#InfoCenterPageModule' },
-  { path: 'treatments', loadChildren: './treatments/treatments.module#TreatmentsPageModule' }
+  { path: 'treatments', loadChildren: './treatments/treatments.module#TreatmentsPageModule' },
+  { path: 'calnedar', loadChildren: './calnedar/calnedar.module#CalnedarPageModule' }
 
 ];
 

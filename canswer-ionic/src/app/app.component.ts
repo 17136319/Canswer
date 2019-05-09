@@ -21,12 +21,17 @@ export class AppComponent {
       icon: 'chatbubbles'
     },
     {
+      title: 'Calendar',
+      url: '/calnedar',
+      icon: 'calendar'
+    },
+    {
       title: 'Symptoms',
       url: '/list',
       icon: 'list'
     },
     {
-      title: 'Treatments',
+      title: 'Preventions',
       url: '/treaatments',
       icon: 'home'
     },
@@ -34,11 +39,6 @@ export class AppComponent {
       title: 'Find a Clinic',
       url: '/find-clinic',
       icon: 'medkit'
-    },
-    {
-      title: 'Information center',
-      url: '/info-center',
-      icon: 'information-circle'
     },
     {
       title: 'Information center',

@@ -6,9 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info-center.page.scss'],
 })
 export class InfoCenterPage implements OnInit {
-
-  constructor() { }
-
+ 
   ngOnInit() {
   }
 
